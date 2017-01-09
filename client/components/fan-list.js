@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Fans } from '../../imports/collections/fans';
+import * as _ from 'lodash';
 
 class FanList extends Component {
+  removeFan(id) {
+    Meteor.call('fans.remove', id)
+  }
+
   renderRows() {
     return this.props.fans.map(fan => {
       return (
-        <tr key={fan.email}>
-          <td>{fan.email}</td>
-          <td>city</td>
-          <td>selection</td>
-        </tr>
+        <tr key={_.uniqueId()}>
+          <td key={_.uniqueId()}>{fan.email}</td>
+          <td key={_.uniqueId()}>{fan.city}</td>
+          <td key={_.uniqueId()}>{fan.selection}</td>
+          <td key={_.uniqueId()} onClick={this.removeFan(fan._id)}>X</td>
+          {/*Above, the onClick is calling for each child upon render...}*/}
+         </tr>
       )
     })
   }
@@ -23,6 +30,7 @@ class FanList extends Component {
             <th>email</th>
             <th>city</th>
             <th>selection</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>

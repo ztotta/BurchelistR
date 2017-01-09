@@ -1,10 +1,11 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  'fans.insert': function(email) {
-    console.log('attempting to insert: ', email)
-    Fans.insert({ email: email });
-
+  'fans.insert': function(data) {
+    Fans.insert({ email: data.email, city: data.city, selection: data.selection });
+  },
+  'fans.remove': function() {
+    console.log('fans.remove reached');
   }
 });
 
