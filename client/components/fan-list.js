@@ -15,7 +15,7 @@ class FanList extends Component {
           <td key={_.uniqueId()}>{fan.email}</td>
           <td key={_.uniqueId()}>{fan.city}</td>
           <td key={_.uniqueId()}>{fan.selection}</td>
-          <td key={_.uniqueId()} onClick={this.removeFan(fan._id)}>X</td>
+          <td key={_.uniqueId()} onClick={() => { this.removeFan(fan._id) }}>X</td>
           {/*Above, the onClick is calling for each child upon render...}*/}
          </tr>
       )

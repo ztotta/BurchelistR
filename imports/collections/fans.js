@@ -4,8 +4,9 @@ Meteor.methods({
   'fans.insert': function(data) {
     Fans.insert({ email: data.email, city: data.city, selection: data.selection });
   },
-  'fans.remove': function() {
-    console.log('fans.remove reached');
+  'fans.remove': function(id) {
+		console.log('fans.remove reached. id: ', id)
+    Fans.remove(id)
   }
 });
 
