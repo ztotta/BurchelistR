@@ -8,8 +8,10 @@ import { Fans } from '../../imports/collections/fans';
 
 export default (props) => {
   return (
-    <div className='pure-g-1-1 main-container'>
-			{props.children}
-    </div>
+		<div className='background'>
+			<div className='pure-g-1-1 main-container'>
+				{props.children}
+			</div>
+		</div>
   );
 };

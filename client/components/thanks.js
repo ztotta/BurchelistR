@@ -4,9 +4,13 @@ import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router';
 class Thanks extends Component {
 	
 	componentDidMount() {
-		setTimeout(() => {
+		goHome = setTimeout(() => {
 			browserHistory.push('/');
 		}, 10000);
+	}
+	
+	clearGoHome() {
+		clearTimeout(goHome);
 	}
 	
 	render() {
@@ -17,7 +21,7 @@ class Thanks extends Component {
 					Hope to see you soon. <br/> <br/>
 					- Jordan <br/> <br/>
 				</h1>
-				<Link to='/'><button className='pure-button'>HOME</button></Link>
+				<Link to='/' onClick={() => {this.clearGoHome()}}><button className='pure-button'>HOME</button></Link>
 			</div>
 		);
 	}
