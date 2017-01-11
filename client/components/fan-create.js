@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 class FanCreate extends Component {
   constructor(props) {
@@ -9,23 +10,27 @@ class FanCreate extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    Meteor.call('fans.insert', {email: this.refs.email.value, city: this.refs.city.value, selection: this.refs.selection.value});
+		
+		if (this.refs.email.value === 'yes') {
+			browserHistory.push('/admin');
+		} else {
+			browserHistory.push('/reward');
+		}
+		
+    Meteor.call('fans.insert', {email: this.refs.email.value});
   }
-	
-	goToAdmin() {
-		console.log('goToAdmin');
-	}	
 
   render() {
     return (
 			<div>
+				<div className='pure-u-1-1 banner'>
+      		Enter your email for stuff and other stuff.
+    		</div>
 				<form onSubmit={this.handleSubmit.bind(this)} className='pure-form'>
 					<input ref='email' />
 					<div>{this.state.error}</div>
 					<button className='pure-button submit-btn'>Submit</button>
 				</form>
-				<button onClick={() => {this.goToAdmin()}}>To admin</button>
 			</div>
     );
   };
