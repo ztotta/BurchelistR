@@ -26,9 +26,9 @@ class FanCreate extends Component {
 
   render() {
     return (
-			<div>
+			<div className='flex-me'>
 				<div className='pure-u-1-1 banner'>
-      		Enter your email for stuff and other stuff.
+					<h1>Enter your email for stuff and other stuff.</h1>
     		</div>
 				<form onSubmit={this.handleSubmit.bind(this)} className='pure-form'>
 					<input ref='email' />

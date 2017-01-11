@@ -5,18 +5,38 @@
 	text-align: center;
 }
 
+.fan-create {
+
+}
+
+.flex-me {
+	
+}
+
+input {
+	margin-bottom: 1.67em;
+}
+
 .main-container {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			width: 70%;
-			height: 70%;
-			padding: 20px;  
-			background: #777;
-			color: white;
-			text-align: center;
-			box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 75%;
+	height: 75%;
+	padding: 20px;  
+	background: #777;
+	color: white;
+	text-align: center;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+	display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 }
 
 .reward-btn {

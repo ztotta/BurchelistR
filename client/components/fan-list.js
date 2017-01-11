@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Fans } from '../../imports/collections/fans';
 import * as _ from 'lodash';
@@ -19,21 +20,28 @@ class FanList extends Component {
       )
     })
   }
+	
+	returnHome() {
+		browserHistory.push('/');
+	}
 
   render() {
     return (
-      <table className='pure-table'>
-        <thead>
-          <tr>
-            <th>email</th>
-            <th>selection</th>
-            <th>delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderRows()}
-        </tbody>
-      </table>
+			<div>
+				<button onClick={this.returnHome.bind(this)} className='pure-button'>Home</button>
+				<table className='pure-table'>
+					<thead>
+						<tr>
+							<th>email</th>
+							<th>selection</th>
+							<th>delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						{this.renderRows()}
+					</tbody>
+				</table>
+			</div>
     );
   }
 };

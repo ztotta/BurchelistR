@@ -8,6 +8,7 @@ import FanCreate from './components/fan-create';
 import FanList from './components/fan-list';
 import Reward from './components/reward';
 import AdminButton from './components/admin-button';
+import Thanks from './components/thanks';
 import { Fans } from '../imports/collections/fans';
 
 const routes = (
@@ -16,6 +17,7 @@ const routes = (
 			<IndexRoute component={FanCreate} />
 			<Route path='admin' component={FanList} />
 			<Route path='reward/:id' component={Reward} />
+			<Route path='thanks' component={Thanks} />
 		</Route>
 	</Router>
 );

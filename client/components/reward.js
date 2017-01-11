@@ -10,13 +10,14 @@ class Reward extends Component {
 
   handleSelection(val) {
 		Meteor.call('fans.addReward', {id: this.props.params.id, reward: val}, function(error, result) {
-				console.log('result: ', result)		
+				console.log('result: ', result);
+				browserHistory.push('/thanks');
 			});
   }
 
   render() {
     return (
-			<div>
+			<div className='flex-me'>
 				<button ref='selection' className='pure-button reward-btn' onClick={this.handleSelection.bind(this, 'download')}>DOWNLOAD UNRELEASED TRACK</button>
 				<button ref='selection' className='pure-button reward-btn' onClick={this.handleSelection.bind(this, 'discount')}>10% OFF BURCHENDISE</button>
 				<button ref='selection' className='pure-button reward-btn' onClick={this.handleSelection.bind(this, 'mystery')}>MYSTERY PRIZE</button>
