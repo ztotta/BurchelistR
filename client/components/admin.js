@@ -4,7 +4,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Fans } from '../../imports/collections/fans';
 import * as _ from 'lodash';
 
-class FanList extends Component {
+class Admin extends Component {
   removeFan(id) {
     Meteor.call('fans.remove', id)
   }
@@ -50,4 +50,4 @@ export default createContainer(() => {
   Meteor.subscribe('fans');
 
   return { fans: Fans.find({}).fetch() };
-}, FanList);
+}, Admin);

@@ -4,8 +4,6 @@ import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router';
 class FanCreate extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { error: '' };
   }
 
   handleSubmit(event) {
@@ -28,11 +26,10 @@ class FanCreate extends Component {
     return (
 			<div className='flex-me'>
 				<div className='pure-u-1-1 banner'>
-					<h1>Enter your email for stuff and other stuff.</h1>
+					<h1>Enter your email for stuff and other stuff.</h1> <br/>
     		</div>
 				<form onSubmit={this.handleSubmit.bind(this)} className='pure-form'>
-					<input ref='email' />
-					<div>{this.state.error}</div>
+					<input ref='email' /> <br/> <br/>
 					<button className='pure-button submit-btn'>Submit</button>
 				</form>
 			</div>

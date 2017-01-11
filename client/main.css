@@ -13,6 +13,10 @@
 	
 }
 
+h1 {
+	margin-bottom: 0.5em;
+}
+
 input {
 	margin-bottom: 1.67em;
 }
@@ -40,7 +44,7 @@ input {
 }
 
 .reward-btn {
-	margin: 0 auto 20px auto;
+	margin: 0 auto 1.67em auto;
 	display: block;
 	height: 100px;
 	width: 400px;

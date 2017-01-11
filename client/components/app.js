@@ -2,7 +2,7 @@ import React from 'react';
 
 //import Banner from './banner';
 import FanCreate from './fan-create';
-import FanList from './fan-list';
+import Admin from './admin';
 import AdminButton from './admin-button';
 import { Fans } from '../../imports/collections/fans';
 
