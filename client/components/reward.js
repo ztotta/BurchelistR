@@ -9,7 +9,9 @@ class Reward extends Component {
   }
 
   handleSelection(val) {
-		console.log(val)
+		Meteor.call('fans.addReward', {id: this.props.params.id, reward: val}, function(error, result) {
+				console.log('result: ', result)		
+			});
   }
 
   render() {

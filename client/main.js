@@ -15,7 +15,7 @@ const routes = (
 		<Route path='/' component={App}>
 			<IndexRoute component={FanCreate} />
 			<Route path='admin' component={FanList} />
-			<Route path='reward' component={Reward} />
+			<Route path='reward/:id' component={Reward} />
 		</Route>
 	</Router>
 );

@@ -11,13 +11,17 @@ class FanCreate extends Component {
   handleSubmit(event) {
     event.preventDefault();
 		
-		if (this.refs.email.value === 'yes') {
+		if (this.refs.email.value === 'admin') {
 			browserHistory.push('/admin');
-		} else {
-			browserHistory.push('/reward');
-		}
-		
-    Meteor.call('fans.insert', {email: this.refs.email.value});
+			return;
+		};
+			
+    var currentId = '';
+	
+		Meteor.call('fans.insert', {email: this.refs.email.value}, function(error, result) {
+				currentId = result;
+				browserHistory.push('/reward/' + currentId);
+			});
   }
 
   render() {

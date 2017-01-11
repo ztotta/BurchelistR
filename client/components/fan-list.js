@@ -13,10 +13,8 @@ class FanList extends Component {
       return (
         <tr key={_.uniqueId()}>
           <td key={_.uniqueId()}>{fan.email}</td>
-          <td key={_.uniqueId()}>{fan.city}</td>
-          <td key={_.uniqueId()}>{fan.selection}</td>
+          <td key={_.uniqueId()}>{fan.reward}</td>
           <td key={_.uniqueId()} onClick={() => { this.removeFan(fan._id) }}>X</td>
-          {/*Above, the onClick is calling for each child upon render...}*/}
          </tr>
       )
     })
@@ -28,7 +26,6 @@ class FanList extends Component {
         <thead>
           <tr>
             <th>email</th>
-            <th>city</th>
             <th>selection</th>
             <th>delete</th>
           </tr>
